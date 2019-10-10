@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyFitnessBuddy</string>
+    <string name="WelcomeToMFB">Welcome to My Fitness Buddy</string>
+    <string name="about">About</string>
+    <string name="aboutContent">
+        MyFitnessBuddy is an application that allows you to track your fitness achievements.\n\n(more will be added later)\n\nCreated by Nick Gysels\nStudent in applied computer sciences\nFor Native Apps I\nHoGent\n2019
+    </string>
 </resources>
