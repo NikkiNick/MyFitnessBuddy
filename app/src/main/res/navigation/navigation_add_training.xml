@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_add_training"
+    app:startDestination="@id/addTraining_ChooseType2">
+
+    <fragment
+        android:id="@+id/addTraining_ChooseType2"
+        android:name="android.example.myfitnessbuddy.fragments.AddTraining_ChooseType"
+        android:label="Choose trainingtype"
+        tools:layout="@layout/fragment_add_training__choose_type">
+        <action
+            android:id="@+id/action_addTraining_ChooseType2_to_addPowerTrainingActivity"
+            app:destination="@id/addPowerTrainingActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/addPowerTrainingActivity"
+        android:name="android.example.myfitnessbuddy.activities.AddPowerTrainingActivity"
+        android:label="AddPowerTrainingActivity" />
+</navigation>

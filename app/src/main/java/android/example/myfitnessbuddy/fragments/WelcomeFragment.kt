@@ -1,6 +1,9 @@
-package android.example.myfitnessbuddy
+package android.example.myfitnessbuddy.fragments
 
 
+import android.content.Intent
+import android.example.myfitnessbuddy.R
+import android.example.myfitnessbuddy.activities.AddTrainingActivity
 import android.example.myfitnessbuddy.databinding.FragmentWelcomeBinding
 import android.os.Bundle
 import android.view.*
@@ -16,27 +19,19 @@ class WelcomeFragment : Fragment() {
 
     private lateinit var binding: FragmentWelcomeBinding
 
+    // ONCREATE
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?{
 
+        // BINDING LAYOUT
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
 
-        setHasOptionsMenu(true)
-
-
+        // BUTTONS ONCLICKLISTENERS
+        this.binding.addTrainingButton.setOnClickListener{
+            var intent = Intent(getContext(), AddTrainingActivity::class.java)
+            startActivity(intent)
+        }
 
         return this.binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.overflow_menu, menu)
-
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return NavigationUI.onNavDestinationSelected(item, view!!.findNavController()) || super.onOptionsItemSelected(item)
-
-    }
 }

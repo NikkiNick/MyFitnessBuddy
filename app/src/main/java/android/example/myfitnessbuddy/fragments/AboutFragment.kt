@@ -1,5 +1,6 @@
-package android.example.myfitnessbuddy
+package android.example.myfitnessbuddy.fragments
 
+import android.example.myfitnessbuddy.R
 import android.example.myfitnessbuddy.databinding.FragmentAboutBinding
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,7 +18,8 @@ class AboutFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_about, container, false)
+        this.binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_about, container, false)
 
         return this.binding.root
 
