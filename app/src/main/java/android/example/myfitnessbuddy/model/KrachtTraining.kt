@@ -1,7 +1,5 @@
 package android.example.myfitnessbuddy.model
 
-import android.os.Parcel
-import android.os.Parcelable
 import android.example.myfitnessbuddy.model.Training as Training
 
 class KrachtTraining(naam: String, omschrijving: String) : Training(naam, omschrijving) {

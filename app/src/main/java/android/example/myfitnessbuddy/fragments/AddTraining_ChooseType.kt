@@ -3,7 +3,7 @@ package android.example.myfitnessbuddy.fragments
 
 import android.content.Intent
 import android.example.myfitnessbuddy.R
-import android.example.myfitnessbuddy.activities.AddPowerTrainingActivity
+import android.example.myfitnessbuddy.activities.AddKrachtTrainingActivity
 import android.example.myfitnessbuddy.databinding.FragmentAddTrainingChooseTypeBinding
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -24,7 +24,7 @@ class AddTraining_ChooseType : Fragment() {
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_training__choose_type, container, false)
 
         this.binding.powertrainingButton.setOnClickListener{
-            var intent = Intent(getContext(), AddPowerTrainingActivity::class.java)
+            var intent = Intent(getContext(), AddKrachtTrainingActivity::class.java)
             startActivity(intent)
         }
         return this.binding.root

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_training"
+    app:startDestination="@id/addKrachtTraining_AddInfo">
+    <fragment
+        android:id="@+id/addKrachtTraining_AddInfo"
+        android:name="android.example.myfitnessbuddy.fragments.AddKrachtTraining.AddKrachtTraining_AddInfo"
+        android:label="Information">
+        <action
+            android:id="@+id/action_addKrachtTraining_AddInfo_to_addKrachtTraining_AddOefeningGroepen"
+            app:destination="@id/addKrachtTraining_AddOefeningGroepen" />
+    </fragment>
+    <fragment
+        android:id="@+id/addKrachtTraining_AddOefeningGroepen"
+        android:name="android.example.myfitnessbuddy.fragments.AddKrachtTraining.AddKrachtTraining_AddOefeningGroepen"
+        android:label="Add Excercise Groups" />
+</navigation>

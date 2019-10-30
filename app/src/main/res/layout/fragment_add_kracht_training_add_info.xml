@@ -18,12 +18,12 @@
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editText2"
+            app:layout_constraintBottom_toTopOf="@+id/omschrijving_editText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/omschrijving_editText"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
@@ -32,13 +32,13 @@
             android:gravity="start|top"
             android:hint="Description"
             android:inputType="textMultiLine"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/addInfo_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.528"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/addInfo_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

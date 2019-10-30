@@ -1,16 +1,19 @@
 package android.example.myfitnessbuddy.activities
 
 import android.example.myfitnessbuddy.R
-import android.example.myfitnessbuddy.databinding.ActivityAddPowerTrainingBinding
+import android.example.myfitnessbuddy.databinding.ActivityAddKrachtTrainingBinding
+import android.example.myfitnessbuddy.ui.KrachtTrainingViewModel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 
-class AddPowerTrainingActivity : AppCompatActivity() {
+class AddKrachtTrainingActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAddPowerTrainingBinding
+    private lateinit var binding: ActivityAddKrachtTrainingBinding
+    private lateinit var viewModel: KrachtTrainingViewModel
 
     // ONCREATE
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +21,10 @@ class AddPowerTrainingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // BINDING LAYOUT
-        binding = DataBindingUtil.setContentView<ActivityAddPowerTrainingBinding>(this, R.layout.activity_add_power_training)
+        binding = DataBindingUtil.setContentView<ActivityAddKrachtTrainingBinding>(this, R.layout.activity_add_kracht_training)
+
+        // VIEWMODEL
+        this.viewModel = ViewModelProviders.of(this).get(KrachtTrainingViewModel::class.java)
 
         // NAVIGATE UP
         val navController = this.findNavController(R.id.myNavHost)

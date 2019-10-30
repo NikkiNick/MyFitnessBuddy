@@ -16,6 +16,6 @@
     </fragment>
     <activity
         android:id="@+id/addPowerTrainingActivity"
-        android:name="android.example.myfitnessbuddy.activities.AddPowerTrainingActivity"
+        android:name="android.example.myfitnessbuddy.activities.AddKrachtTrainingActivity"
         android:label="AddPowerTrainingActivity" />
 </navigation>
