@@ -5,10 +5,9 @@ import android.example.myfitnessbuddy.databinding.ActivityAddKrachtTrainingBindi
 import android.example.myfitnessbuddy.ui.KrachtTrainingViewModel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.NavUtils
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 
 class AddKrachtTrainingActivity : AppCompatActivity() {
 
@@ -26,17 +25,17 @@ class AddKrachtTrainingActivity : AppCompatActivity() {
         // VIEWMODEL
         this.viewModel = ViewModelProviders.of(this).get(KrachtTrainingViewModel::class.java)
 
-        // NAVIGATE UP
-        val navController = this.findNavController(R.id.myNavHost)
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        // NAVIGATE UP TO PREVIOUS ACTIVITY
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
 
     }
 
     // NAVIGATE UP
     override fun onSupportNavigateUp(): Boolean {
 
-        val navController = this.findNavController(R.id.myNavHost)
-        return navController.navigateUp()
+        onBackPressed()
+        return true
 
     }
 }

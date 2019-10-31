@@ -20,15 +20,20 @@ class AddTraining_ChooseType : Fragment() {
     private lateinit var binding: FragmentAddTrainingChooseTypeBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+
+        // BINDING LAYOUT
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_training__choose_type, container, false)
 
+        // BUTTON ONCLICKLISTENERS
         this.binding.powertrainingButton.setOnClickListener{
             var intent = Intent(getContext(), AddKrachtTrainingActivity::class.java)
             startActivity(intent)
         }
+
+        // SET ACTIONBAR TITLE
+        activity?.actionBar?.setTitle(R.string.choose_trainingtype)
+
         return this.binding.root
     }
-
 
 }

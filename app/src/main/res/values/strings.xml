@@ -12,4 +12,9 @@
     <string name="powertraining">Powertraining</string>
     <string name="bicycletraining">Bicycletraining</string>
     <string name="runtraining">Runtraining</string>
+    <string name="add_excercisegroup">Add excercisegroup</string>
+    <string name="next">Next</string>
+    <string name="add_training">New training</string>
+    <string name="create_new_training">Create new training</string>
+    <string name="information">Information</string>
 </resources>

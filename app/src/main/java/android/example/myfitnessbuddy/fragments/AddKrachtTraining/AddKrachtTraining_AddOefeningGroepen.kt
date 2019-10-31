@@ -11,10 +11,9 @@ import android.view.ViewGroup
 import android.example.myfitnessbuddy.R
 import android.example.myfitnessbuddy.databinding.FragmentAddKrachtTrainingAddOefeningGroepenBinding
 import android.example.myfitnessbuddy.ui.KrachtTrainingViewModel
-import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 
 class AddKrachtTraining_AddOefeningGroepen : Fragment() {
 
@@ -26,6 +25,14 @@ class AddKrachtTraining_AddOefeningGroepen : Fragment() {
 
         // BINDING LAYOUT
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_kracht_training__add_oefening_groepen, container, false)
+
+        // BUTTON ONCLICKLISTENERS
+        this.binding.addKrachtOefeningGroepButton.setOnClickListener{view: View ->
+            view.findNavController().navigate(R.id.action_addKrachtTraining_AddOefeningGroepen_to_addKrachtTraining_AddOefeningGroep)
+        }
+
+        // SET ACTIONBAR TITLE
+        activity?.actionBar?.setTitle(this.viewModel.getNaam().toString())
 
         return this.binding.root
 
@@ -43,4 +50,5 @@ class AddKrachtTraining_AddOefeningGroepen : Fragment() {
         this.binding.omschrijvingText.text = this.viewModel.getOmschrijving().value.toString()
 
     }
+
 }

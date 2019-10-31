@@ -30,6 +30,9 @@ class AddKrachtTraining_AddInfo : Fragment() {
         // BINDING LAYOUT
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_kracht_training_add_info, container, false)
 
+        // SET ACTIONBAR TITLE
+        activity?.actionBar?.setTitle(R.string.information)
+
         return this.binding.root
 
     }

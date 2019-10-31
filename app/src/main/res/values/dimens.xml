@@ -3,4 +3,5 @@
     <dimen name="layout_margin">16dp</dimen>
     <dimen name="fontSize_title">24sp</dimen>
     <dimen name="fontSize_content">16sp</dimen>
+    <dimen name="default_padding">16dp</dimen>
 </resources>
