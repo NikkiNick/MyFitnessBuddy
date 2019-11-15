@@ -3,9 +3,6 @@ package android.example.myfitnessbuddy.fragments.AddKrachtTraining
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 
 import android.example.myfitnessbuddy.R
 import android.example.myfitnessbuddy.databinding.FragmentAddKrachtTrainingAddInfoBinding
@@ -13,9 +10,11 @@ import android.example.myfitnessbuddy.databinding.FragmentAddKrachtTrainingStart
 import android.example.myfitnessbuddy.ui.KrachtTrainingViewModel
 import android.example.myfitnessbuddy.ui.KrachtTrainingViewModelFactory
 import android.util.Log
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 
 /**
  * A simple [Fragment] subclass.
@@ -32,18 +31,28 @@ class AddKrachtTraining_Start : Fragment() {
 
         this.viewModel = ViewModelProviders.of(activity!!).get(KrachtTrainingViewModel::class.java)
 
+        this.binding.krachtTraining = this.viewModel
+        this.binding.setLifecycleOwner(this.activity)
+
         this.binding.addKrachtOefeningButton.setOnClickListener {
             view!!.findNavController().navigate(AddKrachtTraining_StartDirections.actionAddKrachtTrainingStartToAddKrachtTrainingAddExcercise())
         }
 
-        this.binding.krachtTraining = this.viewModel
-        this.binding.setLifecycleOwner(this)
-
-
+        setHasOptionsMenu(true)
 
         return this.binding.root
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.overflow_add_krachttraining__start, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item!!,
+            view!!.findNavController())
+                || super.onOptionsItemSelected(item)
+    }
 
 }

@@ -27,12 +27,13 @@ class AddKrachtTraining_AddInfo : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        Log.i("AddInfo", "createview")
         // BINDING LAYOUT
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_kracht_training_add_info, container, false)
 
         // VIEWMODEL
         this.viewModel = ViewModelProviders.of(activity!!).get(KrachtTrainingViewModel::class.java)
+        this.binding.setLifecycleOwner(this.activity)
 
         // BUTTON ONCLICKLISTENER
         this.binding.addInfoButton.setOnClickListener { view: View ->
@@ -41,13 +42,19 @@ class AddKrachtTraining_AddInfo : Fragment() {
             this.viewModel.setOmschrijving(this.binding.omschrijvingEditText.text.toString())
             view.findNavController().navigate(AddKrachtTraining_AddInfoDirections.actionAddKrachtTrainingAddInfoToAddKrachtTrainingStart())
 
-            Log.i("KrachtTrainingViewModel", "INFO Naam:"+this.viewModel.getNaam())
         }
         // SET ACTIONBAR TITLE
         activity?.actionBar?.setTitle(R.string.information)
-
         return this.binding.root
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        if(this.viewModel != null){
+            this.binding.nameEditText.setText(this.viewModel.getNaam())
+            this.binding.omschrijvingEditText.setText(this.viewModel.getOmschrijving())
+        }
+
+    }
 }

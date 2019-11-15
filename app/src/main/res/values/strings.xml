@@ -18,4 +18,5 @@
     <string name="create_new_training">Create new training</string>
     <string name="information">Information</string>
     <string name="add_excercise">Add excercise</string>
+    <string name="edit_info">Edit info</string>
 </resources>

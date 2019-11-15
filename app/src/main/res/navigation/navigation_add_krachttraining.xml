@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_addKrachtTraining_Start_to_addKrachtTraining_AddExcercise"
             app:destination="@id/addKrachtTraining_AddExcercise" />
+        <action
+            android:id="@+id/action_addKrachtTraining_Start_to_addKrachtTraining_AddInfo"
+            app:destination="@id/addKrachtTraining_AddInfo" />
     </fragment>
     <fragment
         android:id="@+id/addKrachtTraining_AddExcercise"

@@ -79,7 +79,7 @@
 
         <RelativeLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -91,8 +91,8 @@
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/add_excercise" />
+                android:text="@string/add_excercise"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 
