@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.example.myfitnessbuddy.R
 import android.example.myfitnessbuddy.databinding.FragmentAddKrachtTrainingAddInfoBinding
 import android.example.myfitnessbuddy.ui.KrachtTrainingViewModel
+import android.example.myfitnessbuddy.ui.KrachtTrainingViewModelFactory
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
@@ -26,41 +27,34 @@ class AddKrachtTraining_AddInfo : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        Log.i("AddInfo", "createview")
         // BINDING LAYOUT
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_kracht_training_add_info, container, false)
 
-        // SET ACTIONBAR TITLE
-        activity?.actionBar?.setTitle(R.string.information)
-
-        return this.binding.root
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        // VIEWMODEL
+        this.viewModel = ViewModelProviders.of(activity!!).get(KrachtTrainingViewModel::class.java)
+        this.binding.setLifecycleOwner(this.activity)
 
         // BUTTON ONCLICKLISTENER
         this.binding.addInfoButton.setOnClickListener { view: View ->
 
             this.viewModel.setNaam(this.binding.nameEditText.text.toString())
             this.viewModel.setOmschrijving(this.binding.omschrijvingEditText.text.toString())
-            Log.i("AddInfoNaam", "naam = ${this.viewModel.getNaam().value}")
-            Log.i("AddInfoNaam", "omschrijving = ${this.viewModel.getOmschrijving().value}")
-            view.findNavController().navigate(R.id.action_addKrachtTraining_AddInfo_to_addKrachtTraining_AddOefeningGroepen)
+            view.findNavController().navigate(AddKrachtTraining_AddInfoDirections.actionAddKrachtTrainingAddInfoToAddKrachtTrainingStart())
 
         }
+        // SET ACTIONBAR TITLE
+        activity?.actionBar?.setTitle(R.string.information)
+        return this.binding.root
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-
-        super.onActivityCreated(savedInstanceState)
-
-        // VIEWMODEL
-        this.viewModel = activity?.run {
-            ViewModelProviders.of(this)[KrachtTrainingViewModel::class.java]
-        } ?: throw Exception("Invalid Activity")
+    override fun onStart() {
+        super.onStart()
+        if(this.viewModel != null){
+            this.binding.nameEditText.setText(this.viewModel.getNaam())
+            this.binding.omschrijvingEditText.setText(this.viewModel.getOmschrijving())
+        }
 
     }
 }
