@@ -33,7 +33,7 @@ class AddKrachtTraining_Start : Fragment() {
         this.viewModel = ViewModelProviders.of(activity!!).get(KrachtTrainingViewModel::class.java)
 
         this.binding.addKrachtOefeningButton.setOnClickListener {
-
+            view!!.findNavController().navigate(AddKrachtTraining_StartDirections.actionAddKrachtTrainingStartToAddKrachtTrainingAddExcercise())
         }
 
         this.binding.krachtTraining = this.viewModel
