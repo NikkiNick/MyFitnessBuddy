@@ -2,27 +2,27 @@ package android.example.myfitnessbuddy.model
 
 import android.example.myfitnessbuddy.model.Training as Training
 
-class KrachtTraining(naam: String, omschrijving: String) : Training(naam, omschrijving) {
+class KrachtTraining() : Training() {
 
     // EXTRA PROPERTIES
-    private var oefeningGroepen: MutableList<KrachtOefeningGroep>
+    private var oefeningen: MutableList<KrachtOefening>
 
     // INITIALIZATION
     init{
-        this.oefeningGroepen = mutableListOf<KrachtOefeningGroep>()
+        this.oefeningen = mutableListOf<KrachtOefening>()
     }
 
     // GETTERS
-    fun getOefeningGroepen(): List<KrachtOefeningGroep> {
-        return this.oefeningGroepen
+    fun getOefeningGroepen(): List<KrachtOefening> {
+        return this.oefeningen
     }
 
     // OTHER FUNCTIONS
-    fun addOefeningGroep(oefeningGroep: KrachtOefeningGroep){
-        this.oefeningGroepen.add(oefeningGroep)
+    fun addOefeningGroep(oefeningGroep: KrachtOefening){
+        this.oefeningen.add(oefeningGroep)
     }
     fun removeOefeningGroep(index: Int){
-        this.oefeningGroepen.removeAt(index)
+        this.oefeningen.removeAt(index)
     }
 
 }

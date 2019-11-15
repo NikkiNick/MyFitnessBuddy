@@ -9,20 +9,12 @@
         android:name="android.example.myfitnessbuddy.fragments.AddKrachtTraining.AddKrachtTraining_AddInfo"
         android:label="@string/information">
         <action
-            android:id="@+id/action_addKrachtTraining_AddInfo_to_addKrachtTraining_AddOefeningGroepen"
-            app:destination="@id/addKrachtTraining_AddOefeningGroepen" />
+            android:id="@+id/action_addKrachtTraining_AddInfo_to_addKrachtTraining_Start"
+            app:destination="@id/addKrachtTraining_Start" />
     </fragment>
     <fragment
-        android:id="@+id/addKrachtTraining_AddOefeningGroepen"
-        android:name="android.example.myfitnessbuddy.fragments.AddKrachtTraining.AddKrachtTraining_AddOefeningGroepen"
-        android:label="Add Excercise Groups" >
-        <action
-            android:id="@+id/action_addKrachtTraining_AddOefeningGroepen_to_addKrachtTraining_AddOefeningGroep"
-            app:destination="@id/addKrachtTraining_AddOefeningGroep" />
-    </fragment>
-    <fragment
-        android:id="@+id/addKrachtTraining_AddOefeningGroep"
-        android:name="android.example.myfitnessbuddy.fragments.AddKrachtTraining.AddKrachtTraining_AddOefeningGroep"
-        android:label="New Excercise Group"
-        tools:layout="@layout/fragment_add_kracht_training__add_oefening_groep" />
+        android:id="@+id/addKrachtTraining_Start"
+        android:name="android.example.myfitnessbuddy.fragments.AddKrachtTraining.AddKrachtTraining_Start"
+        android:label="fragment_add_kracht_training__start"
+        tools:layout="@layout/fragment_add_kracht_training__start" />
 </navigation>

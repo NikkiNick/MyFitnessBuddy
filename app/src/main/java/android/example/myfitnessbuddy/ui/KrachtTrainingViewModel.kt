@@ -1,7 +1,6 @@
 package android.example.myfitnessbuddy.ui
 
-import android.example.myfitnessbuddy.model.KrachtOefeningGroep
-import android.util.Log
+import android.example.myfitnessbuddy.model.KrachtTraining
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,44 +8,26 @@ import androidx.lifecycle.ViewModel
 
 class KrachtTrainingViewModel : ViewModel() {
 
-    // PROPERTIES
-    private var naam: MutableLiveData<String>
-    private var omschrijving: MutableLiveData<String>
-    private var oefeningGroepen: MutableList<KrachtOefeningGroep>
+    private val _krachtTraining = MutableLiveData<KrachtTraining>()
+    val krachtTraining: LiveData<KrachtTraining>
+        get() = this._krachtTraining
 
-    // INITIALIZATION
     init{
-        this.naam = MutableLiveData()
-        this.omschrijving = MutableLiveData()
-        this.oefeningGroepen = mutableListOf<KrachtOefeningGroep>()
+        var training = KrachtTraining()
+        this._krachtTraining.value = training
     }
 
-    // SETTERS
+    fun getNaam(): String{
+        return this._krachtTraining.value?.getNaam().toString()
+    }
+    fun getOmschrijving(): String{
+        return this._krachtTraining.value?.getOmschrijving().toString()
+    }
     fun setNaam(naam: String){
-        this.naam.value = naam
+        this._krachtTraining.value?.setNaam(naam)
     }
     fun setOmschrijving(omschrijving: String){
-        this.omschrijving.value = omschrijving
+        this._krachtTraining.value?.setOmschrijving(omschrijving)
     }
-
-    // GETTERS
-    fun getNaam(): LiveData<String> {
-        return this.naam
-    }
-    fun getOmschrijving(): LiveData<String>{
-        return this.omschrijving
-    }
-    fun getOefeningGroepen(): List<KrachtOefeningGroep> {
-        return this.oefeningGroepen
-    }
-
-    // OTHER FUNCTIONS
-    fun addOefeningGroep(oefeningGroep: KrachtOefeningGroep){
-        this.oefeningGroepen.add(oefeningGroep)
-    }
-    fun removeOefeningGroep(index: Int){
-        this.oefeningGroepen.removeAt(index)
-    }
-
 
 }
